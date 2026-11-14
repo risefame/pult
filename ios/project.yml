@@ -1,0 +1,34 @@
+name: PultPK
+options:
+  bundleIdPrefix: com.pultpk
+  deploymentTarget:
+    iOS: "16.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+targets:
+  PultPK:
+    type: application
+    platform: iOS
+    sources:
+      - PultPK
+    info:
+      path: PultPK/Info.plist
+      properties:
+        CFBundleDisplayName: Пульт ПК
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSLocalNetworkUsageDescription: Приложению нужен доступ к домашней сети, чтобы управлять компьютером и включать его.
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+          NSAllowsArbitraryLoadsInWebContent: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pultpk.remote
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1"
