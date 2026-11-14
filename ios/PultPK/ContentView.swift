@@ -20,6 +20,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            if !online {
             HStack(spacing: 10) {
                 Circle().fill(online ? Color.green : Color.red).frame(width: 10, height: 10)
                 Text(statusText).font(.subheadline).foregroundColor(.gray)
@@ -30,6 +31,7 @@ struct ContentView: View {
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 10)
+            }
 
             if online, let url = URL(string: "http://\(pcIP):\(pcPort)") {
                 PulseWebView(url: url).id(url)
